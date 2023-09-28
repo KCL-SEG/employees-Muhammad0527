@@ -28,7 +28,7 @@ class Employee:
     
     def get_description(self):
         if self.bonus:
-            self.description = self.description + f" and recieves a bonus of {self.bonus}"
+            self.description = self.description + f" and receives a bonus commission of {self.bonus}"
         elif self.comission:
             self.description = self.description + f" and receives a commission for {self.numberOfContracts} contract(s) at {self.comissionPerContract}/contract"
         self.totalPay = f". Their total pay is {str(self.get_pay())}."
@@ -46,7 +46,7 @@ class SaleryWorker(Employee):
         return self.description
     
 class WageWorker(Employee):
-    def __init__(self, name, wage, hours, bonus=0, **kwargs):
+    def __init__(self, name, hours, wage, bonus=0, **kwargs):
         super().__init__(name, bonus, **kwargs)
         self.wage = wage
         self.hours = hours
